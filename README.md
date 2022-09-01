@@ -7,8 +7,8 @@ Objectives:
 
 Column Definitions:  
 <b>rt_audience_score</b> - average rating of audience reviews.  From 0 to 5 stars.   
-Min found in data: 2.5 ,Max found in data:4.4
-audience_freshness - % of audience reviews that are positive(favorable).  
+Min found in data: 2.5 ,Max found in data:4.4  
+<b>audience_freshness</b> - % of audience reviews that are positive(favorable).    
 <b>rt_freshness</b> - % of critic reviews that are positive(favorable).  
 <b>rt_score</b> - average rating of critic reviews.  From 0 to 10.   
 Min found in data: 2.7  ,Max found in data: 9.1    
