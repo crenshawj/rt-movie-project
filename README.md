@@ -54,3 +54,11 @@ One of my goals in doing this project was getting a list of movies that were wel
 Here are the results:  
 
 ![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/rtCritic%20-%20rtAudience%20top%2030.PNG)  
+
+As you can see, this is not exactly Best Picture material.  Most movies are pretty familiar including Transformers, Pirates of the Caribbean, and Twilight.  One which I haven’t heard of is “The Golden Child” starring Eddie Murphy.  It’s about a private detective who is trying to find a missing child that has supernatural powers.  This one sounds pretty good.  I’m going to put it on my watch list.   
+
+*Finding a link between Critic/Audience Review Scores and Box Office Receipts*  
+
+In order to see if there is a relationship between review scores and Gross Box Office amounts, I calculated correlations between Adjusted Box Office Totals and several variables.    
+(Correlations w/ adjusted Gross and different measures of critic/audience scores)  
+![alt text]()
