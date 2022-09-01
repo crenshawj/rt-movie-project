@@ -62,3 +62,30 @@ As you can see, this is not exactly Best Picture material.  Most movies are pret
 In order to see if there is a relationship between review scores and Gross Box Office amounts, I calculated correlations between Adjusted Box Office Totals and several variables.    
 (Correlations w/ adjusted Gross and different measures of critic/audience scores)  
 ![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/correlations.PNG)  
+
+Here we can see that “rt_audience_score” (average audience review score) had the highest correlation with Adjusted Box Office amounts at .3933.  This means that 39.33% of the variation in Adjusted Box Office Totals can be explained by audience review scores.  IMDB rating had the 2nd highest at .2677, and “rt_score” (average critic score) had the 3rd highest.  
+It’s interesting that audience scores seem to have a bigger impact than critic scores on a movie’s Box Office amount.    
+
+Another way to visualize the relationship between average audience review scores and box office receipts is by using a scatter plot.
+
+Here is a scatter plot showing the relationship between rt_audience_score (average user review) and Adjusted Box Office totals:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```matplotlib.pyplot.scatter(scoreList,adjustedList)```  
+![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/scatter%20plot.PNG)  
+
+The red line represents a line of best fit, which is a line that minimizes the squared vertical distances betweeen the observed y's (observed box office amounts) and the predicted y's (The predicted y values are all the points on the line).  
+
+Based on the scatter plot and the line of best fit, it appears there is a moderate positive correlation between average audience ratings and box office receipts.   By taking the slope of the best fit line, we can quantify this relationship.  The equation for the line is y = 354.36x + -687.46.  This means that for every 1 point increase in audience rating, there is an observed $354 million increase in box office receipts. 
+
+Upon examining the data further, I noticed that the box office amounts were heavily skewed. 
+You can see this clearly in the histogram below.  
+Using  
+&nbsp;&nbsp;&nbsp;```dataframe['adjusted'].plot(kind='hist') and matplotlib.pyplot.show()```  
+we can get a histogram of the Adjusted Box Office column:  
+![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/histogram%20box%20office.PNG)  
+
+
+
+
+
+
+
