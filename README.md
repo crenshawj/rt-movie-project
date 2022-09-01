@@ -61,4 +61,4 @@ As you can see, this is not exactly Best Picture material.  Most movies are pret
 
 In order to see if there is a relationship between review scores and Gross Box Office amounts, I calculated correlations between Adjusted Box Office Totals and several variables.    
 (Correlations w/ adjusted Gross and different measures of critic/audience scores)  
-![alt text]()
+![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/correlations.PNG)  
