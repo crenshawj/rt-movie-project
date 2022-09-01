@@ -47,3 +47,9 @@ There were 4 rows that had an RT Score of 0 (no critic reviews).
 After making all these changes to the dataset I was left with 17 columns and 392 rows.  Now I could finally begin analyzing the data.    
 
 Step 3) **Analyzing the Data**  
+
+*Getting top 30 movies by their Audience - Critic Score*
+
+One of my goals in doing this project was getting a list of movies that were well received by audiences but reviewed poorly by critics.  I’ve found that movies that had high critic ratings more often than not dealt with heavy emotional themes and/or were trying to push a certain political agenda.  My reasoning for sorting movies by their Audience - Critic score is to find movies that are entertaining without being too heavy in subject matter.  Since there are two measures of critic sentiment and two measures of audience sentiment I created two new columns: avg_rt and avg_audience.  Avg_rt averages the rt_freshness (% of reviews that are positive) with rt_score (avg critic review score).  Avg_audience is an average of the rt_audience_freshness column (% of user reviews that are favorable) and the rt_audience_score column (average user review score).  Then I wrote a function that uses these two new columns to sort the dataframe by the difference of Avg_audience - Avg_rt.  
+Here are the results:  
+
