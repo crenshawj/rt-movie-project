@@ -79,11 +79,26 @@ Based on the scatter plot and the line of best fit, it appears there is a modera
 Upon examining the data further, I noticed that the box office amounts were heavily skewed. 
 You can see this clearly in the histogram below.  
 Using  
-&nbsp;&nbsp;&nbsp;```dataframe['adjusted'].plot(kind='hist') and matplotlib.pyplot.show()```  
+&nbsp;&nbsp;&nbsp;```dataframe['adjusted'].plot(kind='hist')```  
 we can get a histogram of the Adjusted Box Office column:  
 ![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/histogram%20box%20office.PNG)  
 
+From the histogram we can see that the adjusted box office totals are skewed to the right.  
+(Most movies make < $1 billion USD but a few outliers make > $2 billion)  
+Since the data is skewed, the line of best fit that we found from the scatter plot earlier may not accurately capture the relationship between Box Office amounts and the RT Audience score.   
+In order to make our y values less skewed, and therefore have our line of best fit be more accurate, we need to take the natural log of the Adjusted Box Office values.  Taking the natural log will bring the outliers closer to the other values and make the distribution less skewed.   
 
+To get the natural log of each box office amount, we can create a *for loop* and loop thru every value of the 'Adjusted Box Office' column in the dataframe:  
+&nbsp;&nbsp;&nbsp;```lnAdj = []  #hold list of natural logs of box office```  
+&nbsp;&nbsp;&nbsp;```for boVal in dataframe['adjusted']:```  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```lnAdj.append(math.log(boVal)) #add transformed bo to list```  
+
+After filling up the list w/ the natural log of each box office value, we can add a new column to the dataframe  
+that will hold all the values in lnAdj:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```dataframe[‘ln_adjusted’] = lnAdj  #add new column to dataframe```  
+
+Plotting the natural logs of the box office amounts shows them to be less skewed and more normally distributed:  
+![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/histogram%20box%20office%20natural%20log.PNG)  
 
 
 
