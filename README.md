@@ -98,9 +98,22 @@ that will hold all the values in lnAdj:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```dataframe[‘ln_adjusted’] = lnAdj  #add new column to dataframe```  
 
 Plotting the natural logs of the box office amounts shows them to be less skewed and more normally distributed:  
-![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/histogram%20box%20office%20natural%20log.PNG)  
+![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/histogram%20box%20office%20natural%20log.PNG)   
 
+Now that we have our column of transformed box office values, we can plot a scatter plot between RT User Review Scores and the
+natural logs of the box office:  
 
+![alt text](https://github.com/crenshawj/rt-movie-project/blob/main/images/scatter%20plot%20natural%20log.PNG)  
+
+As we can see from the plot, the transformed box office values are more centered around the best fit line -- there are no extreme outliers like there were in the previous scatter plot.  The equation for the best fit line is y = 0.6248x + 17.76.  The coefficient in front of the x is .6248, meaning a 1 point increase in RT Audience Score (say from 3 to 4), translates to a .6248 increase in the expected natural log of the Box Office amount. So what does this mean?  
+One property of logarithms is that log(x2/x1) = log(x2) - log(x1).  It can be shown using calculus that log(x2)-log(x1) is approximately equal to the proportion change in x: (x2-x1)/x1.  Remember from algebra that the slope of a line is rise over run, or stated another way the change in y given a 1 unit change in x.  Since the slope equals the change in y, we can say that our slope = log(y2/y1) = log(y2)-log(y1) = (y2-y1)/y1 = .6248.  Therefore our slope of .6248 represents the approximate proportion change in y.  
+Multiplying a proportion by 100 converts it into a percentage, so 100(.6248) = 62.48%.  This means that a 1 point increase in the user review score translates to an expected 62.48% increase in box office!  Because we transformed the box office values to make them less skewed, I would say this best fit line better captures the relationship between the user review score and the expected box office amount.  
+
+Conclusion/Summary  
+I had two goals when I started this project, 1)Obtain a list of movies that were enjoyed by audiences but panned critically, and 2)Quantify the relationship between critic/user review scores and box office amounts.  For objective #1, I did find one movie that looked interesting (The Golden Child), so I guess that was kind of a success.  For objective #2, I was surprised at how low the correlation was between a movie’s Rotten Tomato Freshness (% of critic reviews that were positive) and its box office amount.  Also it was kind of surprising that the average user review score had more than double the R^2 value (.3933) than the average critic score (.1732).  From this I can conclude that a movie thats reviewd highly by critics does not necessarily translate into strong box office performance.
+Looking at the relationship between average user scores and box office, we found that the average user review score was a strong predictor of box office success, with a 1 point increase in average user review score resulting in an expected 62% increase in gross box office receipts.     
+Something I would like to explore is the relationship between a movie's budget and its expected box office result but unfortunately the dataset I used did not have movie budgets as a column.  
+(To do: write a python script to scrape movie budgets for each movie in the dataset.) 
 
 
 
